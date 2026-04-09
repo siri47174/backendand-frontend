@@ -1,0 +1,12 @@
+.container{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid grey;
+    h2{
+        text-align: center;
+    }
+}
+.formCSS{
+    display: flex;
+    flex-direction: column;
+    
+}
