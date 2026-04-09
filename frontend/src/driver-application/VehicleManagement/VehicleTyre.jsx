@@ -298,9 +298,7 @@
 
 // export default VehicleTyre;
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import API_BASE_URL from "../config";
 
 const initialFormData = {
   vehicleNumber: "",
@@ -388,6 +386,17 @@ const VehicleTyre = () => {
       boxSizing: "border-box",
       color: "#000",
       backgroundColor: "#fff",
+      outline: "none",
+    },
+    inputReadOnly: {
+      width: "100%",
+      padding: "9px 10px",
+      border: "1.5px solid #000",
+      borderRadius: "4px",
+      fontSize: "14px",
+      boxSizing: "border-box",
+      color: "#000",
+      backgroundColor: "#f9f9f9",
       outline: "none",
     },
     buttonRow: {
@@ -527,11 +536,11 @@ const VehicleTyre = () => {
               <input type="number" style={styles.input} name="costPerTyre"
                 value={formData.costPerTyre} onChange={handleChange} required />
             </div>
+            {/* ✅ FIXED: was duplicate style props, now uses inputReadOnly */}
             <div>
               <label style={styles.label}>Total Cost (₹):</label>
-              <input type="number" style={styles.input} name="totalCost"
-                value={formData.totalCost} readOnly
-                style={{ ...styles.input, backgroundColor: "#f9f9f9" }} />
+              <input type="number" style={styles.inputReadOnly} name="totalCost"
+                value={formData.totalCost} readOnly />
             </div>
             <div>
               <label style={styles.label}>Warranty:</label>

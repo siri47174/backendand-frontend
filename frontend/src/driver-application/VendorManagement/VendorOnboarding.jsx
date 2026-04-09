@@ -281,280 +281,280 @@
 // };
 
 // export default VendorOnboarding;
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import API_BASE_URL from "../config";
+// import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import axios from "axios";
+// import API_BASE_URL from "../config";
 
-const VendorOnboarding = () => {
-  const navigate = useNavigate();
+// const VendorOnboarding = () => {
+//   const navigate = useNavigate();
 
-  const initialFormData = {
-    supplierName: "",
-    venderSiteCode: "",
-    phoneNumber: "",
-    addressLine1: "",
-    addressLine2: "",
-    townCity: "",
-    state: "",
-    pinCode: "",
-    emailId: "",
-    serviceRegistrationNumber: "",
-    serviceTax: "",
-    panNumber: "",
-    tdsRateSection: "",
-    beneficiaryName: "",
-    accountNumber: "",
-    IFSCcode: "",
-    branchName: "",
-  };
+//   const initialFormData = {
+//     supplierName: "",
+//     venderSiteCode: "",
+//     phoneNumber: "",
+//     addressLine1: "",
+//     addressLine2: "",
+//     townCity: "",
+//     state: "",
+//     pinCode: "",
+//     emailId: "",
+//     serviceRegistrationNumber: "",
+//     serviceTax: "",
+//     panNumber: "",
+//     tdsRateSection: "",
+//     beneficiaryName: "",
+//     accountNumber: "",
+//     IFSCcode: "",
+//     branchName: "",
+//   };
 
-  const [formData, setFormData] = useState(initialFormData);
+//   const [formData, setFormData] = useState(initialFormData);
 
-  const styles = {
-    container: {
-      fontFamily: "Arial, sans-serif",
-      marginLeft: "278px",
-      backgroundColor: "white",
-      marginRight: "10px",
-      color: "black",
-      minHeight: "calc(100vh - 70px)",
-      boxShadow: "0px 4px 8px rgba(0,0,0,0.1)",
-    },
-    pageHeader: {
-      backgroundColor: "#FFC107",
-      color: "#000",
-      padding: "16px 20px",
-      fontWeight: "bold",
-      fontSize: "22px",
-      letterSpacing: "1px",
-      textTransform: "uppercase",
-    },
-    formWrapper: { padding: "24px 20px" },
-    sectionTitle: {
-      fontWeight: "bold",
-      fontSize: "15px",
-      color: "#000",
-      borderBottom: "2px solid #FFC107",
-      paddingBottom: "6px",
-      marginBottom: "16px",
-      marginTop: "10px",
-    },
-    formGrid: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-      gap: "20px",
-      marginBottom: "24px",
-    },
-    label: {
-      fontWeight: "bold",
-      fontSize: "14px",
-      marginBottom: "6px",
-      display: "block",
-      color: "#000",
-    },
-    input: {
-      width: "100%",
-      padding: "9px 10px",
-      border: "1.5px solid #000",
-      borderRadius: "4px",
-      fontSize: "14px",
-      boxSizing: "border-box",
-      color: "#000",
-      backgroundColor: "#fff",
-      outline: "none",
-    },
-    buttonRow: {
-      display: "flex",
-      gap: "12px",
-      justifyContent: "flex-end",
-      paddingBottom: "10px",
-    },
-    btnBlack: {
-      padding: "9px 28px",
-      border: "none",
-      borderRadius: "4px",
-      cursor: "pointer",
-      backgroundColor: "black",
-      color: "white",
-      fontWeight: "bold",
-      fontSize: "14px",
-    },
-    btnYellow: {
-      padding: "9px 28px",
-      border: "none",
-      borderRadius: "4px",
-      cursor: "pointer",
-      backgroundColor: "#FFC107",
-      color: "black",
-      fontWeight: "bold",
-      fontSize: "14px",
-    },
-  };
+//   const styles = {
+//     container: {
+//       fontFamily: "Arial, sans-serif",
+//       marginLeft: "278px",
+//       backgroundColor: "white",
+//       marginRight: "10px",
+//       color: "black",
+//       minHeight: "calc(100vh - 70px)",
+//       boxShadow: "0px 4px 8px rgba(0,0,0,0.1)",
+//     },
+//     pageHeader: {
+//       backgroundColor: "#FFC107",
+//       color: "#000",
+//       padding: "16px 20px",
+//       fontWeight: "bold",
+//       fontSize: "22px",
+//       letterSpacing: "1px",
+//       textTransform: "uppercase",
+//     },
+//     formWrapper: { padding: "24px 20px" },
+//     sectionTitle: {
+//       fontWeight: "bold",
+//       fontSize: "15px",
+//       color: "#000",
+//       borderBottom: "2px solid #FFC107",
+//       paddingBottom: "6px",
+//       marginBottom: "16px",
+//       marginTop: "10px",
+//     },
+//     formGrid: {
+//       display: "grid",
+//       gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+//       gap: "20px",
+//       marginBottom: "24px",
+//     },
+//     label: {
+//       fontWeight: "bold",
+//       fontSize: "14px",
+//       marginBottom: "6px",
+//       display: "block",
+//       color: "#000",
+//     },
+//     input: {
+//       width: "100%",
+//       padding: "9px 10px",
+//       border: "1.5px solid #000",
+//       borderRadius: "4px",
+//       fontSize: "14px",
+//       boxSizing: "border-box",
+//       color: "#000",
+//       backgroundColor: "#fff",
+//       outline: "none",
+//     },
+//     buttonRow: {
+//       display: "flex",
+//       gap: "12px",
+//       justifyContent: "flex-end",
+//       paddingBottom: "10px",
+//     },
+//     btnBlack: {
+//       padding: "9px 28px",
+//       border: "none",
+//       borderRadius: "4px",
+//       cursor: "pointer",
+//       backgroundColor: "black",
+//       color: "white",
+//       fontWeight: "bold",
+//       fontSize: "14px",
+//     },
+//     btnYellow: {
+//       padding: "9px 28px",
+//       border: "none",
+//       borderRadius: "4px",
+//       cursor: "pointer",
+//       backgroundColor: "#FFC107",
+//       color: "black",
+//       fontWeight: "bold",
+//       fontSize: "14px",
+//     },
+//   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData((prev) => ({ ...prev, [name]: value }));
+//   };
 
-  const validateForm = () => {
-    const alphabetRegex = /^[a-zA-Z ]+$/;
-    const phoneRegex = /^[0-9]{10}$/;
-    const pinRegex = /^[0-9]{6}$/;
-    const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
-    const ifscRegex = /^[A-Z]{4}0[A-Z0-9]{6}$/;
+//   const validateForm = () => {
+//     const alphabetRegex = /^[a-zA-Z ]+$/;
+//     const phoneRegex = /^[0-9]{10}$/;
+//     const pinRegex = /^[0-9]{6}$/;
+//     const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+//     const ifscRegex = /^[A-Z]{4}0[A-Z0-9]{6}$/;
 
-    if (!alphabetRegex.test(formData.supplierName)) {
-      alert("Supplier Name should contain only alphabets."); return false;
-    }
-    if (!phoneRegex.test(formData.phoneNumber)) {
-      alert("Phone Number should be 10 digits."); return false;
-    }
-    if (!pinRegex.test(formData.pinCode)) {
-      alert("Pin Code should be 6 digits."); return false;
-    }
-    if (!panRegex.test(formData.panNumber)) {
-      alert("Invalid PAN Number format."); return false;
-    }
-    if (!ifscRegex.test(formData.IFSCcode)) {
-      alert("Invalid IFSC Code format."); return false;
-    }
-    return true;
-  };
+//     if (!alphabetRegex.test(formData.supplierName)) {
+//       alert("Supplier Name should contain only alphabets."); return false;
+//     }
+//     if (!phoneRegex.test(formData.phoneNumber)) {
+//       alert("Phone Number should be 10 digits."); return false;
+//     }
+//     if (!pinRegex.test(formData.pinCode)) {
+//       alert("Pin Code should be 6 digits."); return false;
+//     }
+//     if (!panRegex.test(formData.panNumber)) {
+//       alert("Invalid PAN Number format."); return false;
+//     }
+//     if (!ifscRegex.test(formData.IFSCcode)) {
+//       alert("Invalid IFSC Code format."); return false;
+//     }
+//     return true;
+//   };
 
-  const handleContinue = () => {
-    if (validateForm()) {
-      navigate("/vendor-confirm", { state: { formData } });
-    }
-  };
+//   const handleContinue = () => {
+//     if (validateForm()) {
+//       navigate("/vendor-confirm", { state: { formData } });
+//     }
+//   };
 
-  const handleClear = () => setFormData(initialFormData);
+//   const handleClear = () => setFormData(initialFormData);
 
-  return (
-    <div style={styles.container}>
-      <div style={styles.pageHeader}>VENDOR ONBOARDING</div>
+//   return (
+//     <div style={styles.container}>
+//       <div style={styles.pageHeader}>VENDOR ONBOARDING</div>
 
-      <div style={styles.formWrapper}>
+//       <div style={styles.formWrapper}>
 
-        {/* Basic Info */}
-        <div style={styles.sectionTitle}>Basic Information</div>
-        <div style={styles.formGrid}>
-          <div>
-            <label style={styles.label}>Supplier Name:</label>
-            <input type="text" style={styles.input} name="supplierName"
-              value={formData.supplierName} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>Vendor Site Code:</label>
-            <select name="venderSiteCode" style={styles.input}
-              value={formData.venderSiteCode} onChange={handleChange} required>
-              <option value="">Select</option>
-              <option value="Rental">Rental</option>
-              <option value="Adhoc">Adhoc</option>
-            </select>
-          </div>
-          <div>
-            <label style={styles.label}>Phone Number:</label>
-            <input type="text" style={styles.input} name="phoneNumber"
-              value={formData.phoneNumber} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>Email ID:</label>
-            <input type="email" style={styles.input} name="emailId"
-              value={formData.emailId} onChange={handleChange} required />
-          </div>
-        </div>
+//         {/* Basic Info */}
+//         <div style={styles.sectionTitle}>Basic Information</div>
+//         <div style={styles.formGrid}>
+//           <div>
+//             <label style={styles.label}>Supplier Name:</label>
+//             <input type="text" style={styles.input} name="supplierName"
+//               value={formData.supplierName} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>Vendor Site Code:</label>
+//             <select name="venderSiteCode" style={styles.input}
+//               value={formData.venderSiteCode} onChange={handleChange} required>
+//               <option value="">Select</option>
+//               <option value="Rental">Rental</option>
+//               <option value="Adhoc">Adhoc</option>
+//             </select>
+//           </div>
+//           <div>
+//             <label style={styles.label}>Phone Number:</label>
+//             <input type="text" style={styles.input} name="phoneNumber"
+//               value={formData.phoneNumber} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>Email ID:</label>
+//             <input type="email" style={styles.input} name="emailId"
+//               value={formData.emailId} onChange={handleChange} required />
+//           </div>
+//         </div>
 
-        {/* Address */}
-        <div style={styles.sectionTitle}>Address Details</div>
-        <div style={styles.formGrid}>
-          <div>
-            <label style={styles.label}>Address Line 1:</label>
-            <textarea name="addressLine1"
-              style={{ ...styles.input, minHeight: "70px", resize: "vertical" }}
-              value={formData.addressLine1} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>Address Line 2:</label>
-            <textarea name="addressLine2"
-              style={{ ...styles.input, minHeight: "70px", resize: "vertical" }}
-              value={formData.addressLine2} onChange={handleChange} />
-          </div>
-          <div>
-            <label style={styles.label}>Town / City:</label>
-            <input type="text" style={styles.input} name="townCity"
-              value={formData.townCity} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>State:</label>
-            <input type="text" style={styles.input} name="state"
-              value={formData.state} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>Pin Code:</label>
-            <input type="text" style={styles.input} name="pinCode"
-              value={formData.pinCode} onChange={handleChange} required />
-          </div>
-        </div>
+//         {/* Address */}
+//         <div style={styles.sectionTitle}>Address Details</div>
+//         <div style={styles.formGrid}>
+//           <div>
+//             <label style={styles.label}>Address Line 1:</label>
+//             <textarea name="addressLine1"
+//               style={{ ...styles.input, minHeight: "70px", resize: "vertical" }}
+//               value={formData.addressLine1} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>Address Line 2:</label>
+//             <textarea name="addressLine2"
+//               style={{ ...styles.input, minHeight: "70px", resize: "vertical" }}
+//               value={formData.addressLine2} onChange={handleChange} />
+//           </div>
+//           <div>
+//             <label style={styles.label}>Town / City:</label>
+//             <input type="text" style={styles.input} name="townCity"
+//               value={formData.townCity} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>State:</label>
+//             <input type="text" style={styles.input} name="state"
+//               value={formData.state} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>Pin Code:</label>
+//             <input type="text" style={styles.input} name="pinCode"
+//               value={formData.pinCode} onChange={handleChange} required />
+//           </div>
+//         </div>
 
-        {/* Tax & Legal */}
-        <div style={styles.sectionTitle}>Tax & Legal Information</div>
-        <div style={styles.formGrid}>
-          <div>
-            <label style={styles.label}>Service Registration Number (GST):</label>
-            <input type="text" style={styles.input} name="serviceRegistrationNumber"
-              value={formData.serviceRegistrationNumber} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>Service Tax Rate (if any):</label>
-            <input type="text" style={styles.input} name="serviceTax"
-              value={formData.serviceTax} onChange={handleChange} />
-          </div>
-          <div>
-            <label style={styles.label}>PAN Number:</label>
-            <input type="text" style={styles.input} name="panNumber"
-              value={formData.panNumber} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>TDS Rate & Section (if any):</label>
-            <input type="text" style={styles.input} name="tdsRateSection"
-              value={formData.tdsRateSection} onChange={handleChange} />
-          </div>
-        </div>
+//         {/* Tax & Legal */}
+//         <div style={styles.sectionTitle}>Tax & Legal Information</div>
+//         <div style={styles.formGrid}>
+//           <div>
+//             <label style={styles.label}>Service Registration Number (GST):</label>
+//             <input type="text" style={styles.input} name="serviceRegistrationNumber"
+//               value={formData.serviceRegistrationNumber} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>Service Tax Rate (if any):</label>
+//             <input type="text" style={styles.input} name="serviceTax"
+//               value={formData.serviceTax} onChange={handleChange} />
+//           </div>
+//           <div>
+//             <label style={styles.label}>PAN Number:</label>
+//             <input type="text" style={styles.input} name="panNumber"
+//               value={formData.panNumber} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>TDS Rate & Section (if any):</label>
+//             <input type="text" style={styles.input} name="tdsRateSection"
+//               value={formData.tdsRateSection} onChange={handleChange} />
+//           </div>
+//         </div>
 
-        {/* Bank Details */}
-        <div style={styles.sectionTitle}>Bank Details</div>
-        <div style={styles.formGrid}>
-          <div>
-            <label style={styles.label}>Beneficiary Name (as on Cheque/Passbook):</label>
-            <input type="text" style={styles.input} name="beneficiaryName"
-              value={formData.beneficiaryName} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>Account Number:</label>
-            <input type="text" style={styles.input} name="accountNumber"
-              value={formData.accountNumber} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>IFSC Code:</label>
-            <input type="text" style={styles.input} name="IFSCcode"
-              value={formData.IFSCcode} onChange={handleChange} required />
-          </div>
-          <div>
-            <label style={styles.label}>Branch Name:</label>
-            <input type="text" style={styles.input} name="branchName"
-              value={formData.branchName} onChange={handleChange} required />
-          </div>
-        </div>
+//         {/* Bank Details */}
+//         <div style={styles.sectionTitle}>Bank Details</div>
+//         <div style={styles.formGrid}>
+//           <div>
+//             <label style={styles.label}>Beneficiary Name (as on Cheque/Passbook):</label>
+//             <input type="text" style={styles.input} name="beneficiaryName"
+//               value={formData.beneficiaryName} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>Account Number:</label>
+//             <input type="text" style={styles.input} name="accountNumber"
+//               value={formData.accountNumber} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>IFSC Code:</label>
+//             <input type="text" style={styles.input} name="IFSCcode"
+//               value={formData.IFSCcode} onChange={handleChange} required />
+//           </div>
+//           <div>
+//             <label style={styles.label}>Branch Name:</label>
+//             <input type="text" style={styles.input} name="branchName"
+//               value={formData.branchName} onChange={handleChange} required />
+//           </div>
+//         </div>
 
-        <div style={styles.buttonRow}>
-          <button type="button" style={styles.btnBlack} onClick={handleClear}>Clear</button>
-          <button type="button" style={styles.btnYellow} onClick={handleContinue}>Continue</button>
-        </div>
+//         <div style={styles.buttonRow}>
+//           <button type="button" style={styles.btnBlack} onClick={handleClear}>Clear</button>
+//           <button type="button" style={styles.btnYellow} onClick={handleContinue}>Continue</button>
+//         </div>
 
-      </div>
-    </div>
-  );
-};
+//       </div>
+//     </div>
+//   );
+// };
 
-export default VendorOnboarding;
+// export default VendorOnboarding;
