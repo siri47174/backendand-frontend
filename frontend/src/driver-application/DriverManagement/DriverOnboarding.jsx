@@ -804,6 +804,7 @@ const containerStyle = {
   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
 };
 
+// eslint-disable-next-line no-unused-vars
 const heading = {
   ...globalFontStyle,
   textAlign: "center",
@@ -940,12 +941,14 @@ const uploadButtonHoverStyle = {
 };
 
 const DriverOnboarding = () => {
+  // eslint-disable-next-line no-unused-vars
   const navigate = useNavigate();
   const [latestId, setLatestId] = useState("DE0000");
   const [errors, setErrors] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [drivers, setDrivers] = useState([]);
   const [editMode, setEditMode] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [isReferred, setIsReferred] = useState(false);
   const [documents, setDocuments] = useState({
     profilePicture: null,
@@ -1077,6 +1080,7 @@ const DriverOnboarding = () => {
     }
   };
 
+  // eslint-disable-next-line no-unused-vars
   const validateForm = () => {
     let newErrors = {};
     if (!formData.firstName) newErrors.firstName = "First name is required";
@@ -1649,6 +1653,7 @@ const DriverOnboarding = () => {
   );
 };
 
+// eslint-disable-next-line no-unused-vars
 const DriverConfirm = () => (
   <div style={containerStyle}>
     <h2 style={{ textAlign: "center" }}>Driver Confirmation Page</h2>

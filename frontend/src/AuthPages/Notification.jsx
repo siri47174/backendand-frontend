@@ -155,7 +155,7 @@
 //   );
 // }
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 export default function Notification() {
   const [search, setSearch] = useState("");

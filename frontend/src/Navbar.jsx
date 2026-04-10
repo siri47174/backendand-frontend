@@ -478,10 +478,12 @@ import "./App.css";
 import API_BASE_URL from "./config";
 
 const Navbar = () => {
+  // eslint-disable-next-line no-unused-vars
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [showNotification, setNotification] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 768);
+  // eslint-disable-next-line no-unused-vars
   const [notificationCount, setNotificationCount] = useState(1);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();

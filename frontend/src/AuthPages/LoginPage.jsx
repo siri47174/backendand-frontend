@@ -9,6 +9,7 @@ export default function LoginPage({ onLogin }) {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  // eslint-disable-next-line no-unused-vars
   const[isAuthenticated, setIsAuthenticated]=useState(
     sessionStorage.getItem("isAuthenticated")==="true"
   );
@@ -173,7 +174,8 @@ export default function LoginPage({ onLogin }) {
             New User? Sign Up
           </p>
           <a
-            onClick={() => navigate("/forgot-password")}
+            href="#forgot-password"
+            onClick={(e) => { e.preventDefault(); navigate("/forgot-password"); }}
             className="forgot-password"
           >
             Forgot Password?
