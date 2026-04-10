@@ -1153,6 +1153,7 @@ const DriverAdvance = () => {
     }
   };
  
+  // eslint-disable-next-line no-unused-vars
   const handleSearch = () => {
     console.log("Searching with:", { searchTerm, statusFilter, startDate, endDate });
   };

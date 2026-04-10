@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -30,6 +30,7 @@ import Invoice from "./driver-application/CustomerManagement/Invoice.jsx";
 import PaymentStatus from "./driver-application/CustomerManagement/PaymentStatus.jsx";
 import CustomerOnboarding from "./driver-application/CustomerManagement/CustomerOnboarding.jsx";
 import MIS from "./driver-application/CustomerManagement/MIS";
+// eslint-disable-next-line no-unused-vars
 import Sidebar from "./Components/Sidebar.jsx";
 import CustomerConfirmation from "./driver-application/CustomerManagement/CustomerConfirmation.jsx";
 import VehicleConfirmation from "./driver-application/VehicleManagement/VehicleConfirmation.jsx";
@@ -54,6 +55,7 @@ import VehicleGPSIntegration from "./driver-application/DriverManagement/Vehicle
 import DriverVehicleTracking from "./driver-application/DriverManagement/DriverVehicleTracking.jsx";
 import Home from "./Components/Home.jsx";
 import MyProfile from "./MyProfile.jsx";
+// eslint-disable-next-line no-unused-vars
 import LogOut from "./AuthPages/LogOut.jsx";
 import Notification from "./AuthPages/Notification.jsx";
 import HelpSupport from "./Components/HelpSupport.jsx";
@@ -76,6 +78,7 @@ const App = () => {
     setIsAuthenticated(true);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const handleLogout = () => {
     setIsAuthenticated(false);
     localStorage.removeItem("isAuthenticated");

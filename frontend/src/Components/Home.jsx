@@ -294,6 +294,7 @@ import API_BASE_URL from "./config";
 const Home = () => {
   const [vehicles, setVehicles] = useState([]);
   const [activeTab, setActiveTab] = useState("All");
+  // eslint-disable-next-line no-unused-vars
   const [selectedVehicle, setSelectedVehicle] = useState(null);
   const [history, setHistory] = useState([]);
   const [parking, setParking] = useState([]);
@@ -441,6 +442,7 @@ const Home = () => {
       .catch(err => console.error("Error fetching data:", err));
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
   const fetchVehicleHistory = (vehicleNumber) => {
     fetch(`${API_BASE_URL}/home/history/${vehicleNumber}`)
       .then(r => r.json())
@@ -448,6 +450,7 @@ const Home = () => {
       .catch(err => console.error("Error fetching history:", err));
   };
 
+  // eslint-disable-next-line no-unused-vars
   const fetchParkingDetails = (vehicleNumber) => {
     fetch(`${API_BASE_URL}/home/parking/${vehicleNumber}`)
       .then(r => r.json())

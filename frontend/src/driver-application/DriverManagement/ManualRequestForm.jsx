@@ -106,7 +106,9 @@ const ManualRequestForm = ({ onClose, refreshData }) => {
   });
 
   const currentDate=new Date();
+  // eslint-disable-next-line no-unused-vars
   const formattedDate=`{String(currentDate.getDate()).padStart(2,'0')}/${String(currentDate.getMonth()+1).padStart(2,0)}/${currentDate.getFullYear()}`;
+  // eslint-disable-next-line no-unused-vars
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -196,6 +198,7 @@ const labelStyle = {
   fontWeight: "bold",
 };
 
+// eslint-disable-next-line no-unused-vars
 const inputStyle = {
   padding: "10px",
   border: "1px solid #ccc",

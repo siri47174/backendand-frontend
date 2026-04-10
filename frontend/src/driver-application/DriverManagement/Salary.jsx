@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import API_BASE_URL from "../config";
 
@@ -348,9 +348,6 @@ import API_BASE_URL from "../config";
 // };
 
 // export default Salary;
-import React, { useState, useEffect, useCallback } from "react";
-import axios from "axios";
-import API_BASE_URL from "../config";
 
 const Salary = () => {
   const driverDetails = JSON.parse(sessionStorage.getItem("driverDetails"));
@@ -361,6 +358,7 @@ const Salary = () => {
     currentDate.getMonth() + 1
   ).padStart(2, "0")}`;
 
+  // eslint-disable-next-line no-unused-vars
   const [selectedMonth, setSelectedMonth] = useState(currentMonth);
   const [salaryData, setSalaryData] = useState({});
   const [loading, setLoading] = useState(true);
